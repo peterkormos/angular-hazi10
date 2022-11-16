@@ -33,6 +33,10 @@ export class AuthService {
     );
   }
 
+  registration(username: string, email: string, password: string) {
+    return this.http.post<User>(`${this._baseUrl}/registration`, { username, email, password });
+  }
+
   login(email: string,
     password: string) {
     return this.http.post<User>(`${this._baseUrl}/login`, { email, password }).pipe(
