@@ -2,7 +2,7 @@
 <mat-card class="idea" *ngFor="let idea of ideas">
 
   <mat-card-title matBadge="{{idea.votes}}">{{idea.name}}</mat-card-title>
-  <mat-card-subtitle>{{idea.decription}}</mat-card-subtitle>
+  <mat-card-subtitle>{{idea.description}}</mat-card-subtitle>
   <mat-card-actions>
     <button mat-button (click)="upvote(idea)" ><mat-icon>thumb_up</mat-icon></button>
     <button mat-button (click)="downvote(idea)" ><mat-icon>thumb_down</mat-icon></button>
