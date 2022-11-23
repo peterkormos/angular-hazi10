@@ -15,26 +15,11 @@ export class ListIdeasComponent implements OnInit {
 
   ngOnInit(): void
   {
+    console.log('ngOnInit()...');
     this.listIdeas();
   }
   listIdeas()
   {
     this.ideasService.listIdeas().subscribe(ideas => this.ideas = ideas);
-  }
-
-  upvote(idea: Idea) {
-    this.ideasService.upvoteIdea(idea).subscribe(_ => this.listIdeas());
-  }
-
-  downvote(idea: Idea) {
-    this.ideasService.downvoteIdea(idea).subscribe(_ => this.listIdeas());
-  }
-
-  delete(idea: Idea) {
-    this.ideasService.deleteIdea(idea).subscribe(_ => this.listIdeas());
-  }
-
-  editIdea(idea: Idea) {
-    this.router.navigateByUrl(`/ideas/new?id=${idea.id}`)
   }
 }
