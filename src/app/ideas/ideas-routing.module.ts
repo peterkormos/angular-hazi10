@@ -2,6 +2,7 @@ import { NewIdeaComponent } from './new-idea/new-idea.component';
 import { ListIdeasComponent } from './list-ideas/list-ideas.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { IdeaResolverService } from './idea-resolver.service';
 
 const routes: Routes = [
   {
@@ -10,7 +11,9 @@ const routes: Routes = [
   },
   {
     path: 'new',
-    component: NewIdeaComponent
+    component: NewIdeaComponent,
+    runGuardsAndResolvers: 'paramsOrQueryParamsChange',
+    resolve: {idea: IdeaResolverService}
   }
 ];
 
