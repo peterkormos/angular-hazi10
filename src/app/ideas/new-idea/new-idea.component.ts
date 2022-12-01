@@ -23,6 +23,7 @@ export class NewIdeaComponent implements OnInit {
       description: new FormControl('', Validators.required),
     });
 
+    // IdeaResolverService által id -ből Idea-ba átforgatott adatot lehet így lekérdezni.
     activatedRoute.data.subscribe(data => {
       this.isEditing = !!data.idea;
       if (this.isEditing) {
